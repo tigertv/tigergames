@@ -1,0 +1,29 @@
+html {
+	font-family: Helvetica;
+}
+
+h1 {
+	font-size: 20px;
+}
+
+.bomb {
+	color: red;
+}
+
+#board {
+	border-collapse: separate;
+	border-spacing: 10px;
+}
+
+#board tr {
+
+}
+
+#board td {
+	background: #2874a6;
+	color: white;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+}
+

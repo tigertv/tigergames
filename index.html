@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="pragma" content="no-cache" />
+	<title>Minesweeper</title>
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" />
+	<script src="js/Event.js"></script>
+	<script src="js/BoardModel.js"></script>
+	<script src="js/BoardView.js"></script>
+	<script src="js/Board.js"></script>
+	<script src="js/Game.js"></script>
+</head>
+<body>
+
+<h1>MineSweeper</h1>
+
+<select id="level">
+	<option value="beginner" selected="selected">Beginner</option>
+	<option value="intermediate">Intermediate</option>
+	<option value="expert">Expert</option>
+</select>
+
+<button onclick="Game.start();">Start</button>
+<button onclick="Game.restart();">Restart</button>
+
+<table id="board"></table>
+
+</body>
+</html>
