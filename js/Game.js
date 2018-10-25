@@ -53,8 +53,13 @@ var Game = {
 
 	changeState: function(state) {
 		this.state = state;
-		if (state == GameState.WIN) {
-			alert("You win!");
-		}
+		switch(state) {
+			case GameState.WIN: 
+				alert("You win!");
+				break;
+			case GameState.LOST: 
+				alert("You lose!");
+				break;
+		} 
 	},
 };
