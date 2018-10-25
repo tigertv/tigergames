@@ -76,13 +76,17 @@ var BoardModel = (function() {
 
 	BoardModel.prototype.open = function (column, row) {
 		//TODO: check bounds
+		if (_cells[column][row].isOpen) return;
+
 		_cells[column][row].isOpen = true;
 		this.openedCount++;
+
 		if (_cells[column][row].hasMine) {
 			result = -1;
 		} else {
 			result = _cells[column][row].neighbors;
 		}
+
 		this.cellOpened.notify({column: column, row: row, cell: _cells[column][row]});
 	};
 

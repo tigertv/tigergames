@@ -20,7 +20,6 @@ BoardView.prototype.updateCell = function (sender, args) {
 	} else {
 		elem.innerHTML = cell.neighbors;
 	}
-
 };
 
 BoardView.prototype.render = function () {
