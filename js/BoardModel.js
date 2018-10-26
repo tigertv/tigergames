@@ -1,6 +1,7 @@
 function Cell () {
 	this.hasMine = false;
 	this.isOpen = false;
+	this.hasFlag = false;
 	this.neighbors = 0;
 }
 
@@ -14,6 +15,7 @@ var BoardModel = (function() {
 		_height = height;
 		this.openedCount = 0;
 		this.cellOpened = new Event(this);
+		this.flagSwitched = new Event(this);
 
 		_cells = new Array(this.width);
 
@@ -77,6 +79,7 @@ var BoardModel = (function() {
 	BoardModel.prototype.open = function (column, row) {
 		//TODO: check bounds
 		if (_cells[column][row].isOpen) return;
+		if (_cells[column][row].hasFlag) return;
 
 		_cells[column][row].isOpen = true;
 		this.openedCount++;
@@ -90,6 +93,15 @@ var BoardModel = (function() {
 		this.cellOpened.notify({column: column, row: row, cell: _cells[column][row]});
 	};
 
+	BoardModel.prototype.switchFlag = function (column, row) {
+		if (_cells[column][row].isOpen) return; 
+		if (_cells[column][row].hasFlag) {
+			_cells[column][row].hasFlag = false;
+		} else {
+			_cells[column][row].hasFlag = true;
+		}
+		this.flagSwitched.notify({column: column, row: row, hasFlag: _cells[column][row].hasFlag});
+	};
 
 	return BoardModel;
 })();

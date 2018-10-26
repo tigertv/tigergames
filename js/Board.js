@@ -9,6 +9,7 @@ function Board (model, view) {
 	// model handlers
 	this.model.cellOpened.attach(this.checkMine.bind(this));
 	this.view.clicked.attach(this.viewClickHandler.bind(this));
+	this.view.rightClicked.attach(this.viewRightClickHandler.bind(this));
 }
 
 Board.prototype.refresh = function (mines) {
@@ -21,6 +22,11 @@ Board.prototype.refresh = function (mines) {
 Board.prototype.viewClickHandler = function (sender, args) {
 	if (Game.state == GameState.LOST) return;
 	this.model.open(args.column, args.row);
+};
+
+Board.prototype.viewRightClickHandler = function (sender, args) {
+	if (Game.state == GameState.LOST) return;
+	this.model.switchFlag(args.column, args.row);
 };
 
 Board.prototype.checkMine = function (sender, args) {
