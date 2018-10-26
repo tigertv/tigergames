@@ -1,6 +1,6 @@
-function BoardView (model) {
+function BoardView (model, elementId) {
 	this.model = model;
-	this.element = document.getElementById("board");
+	this.element = document.getElementById(elementId);
 
 	// events
 	this.clicked = new Event(this);

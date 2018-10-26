@@ -45,7 +45,7 @@ var Game = {
 		}
 
 		let model = new BoardModel(size,size);
-		let view = new BoardView(model);
+		let view = new BoardView(model, "board");
 		this.board = new Board(model, view);
 
 		this.board.refresh(this.mines);
