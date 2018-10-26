@@ -52,12 +52,14 @@ var Game = {
 	},
 
 	changeState: function(state) {
+		if(this.state == state) return;
 		this.state = state;
 		switch(state) {
 			case GameState.WIN: 
 				alert("You win!");
 				break;
 			case GameState.LOST: 
+				this.board.openAllMines();
 				alert("You lose!");
 				break;
 		} 

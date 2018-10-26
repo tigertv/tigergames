@@ -40,6 +40,7 @@ var BoardModel = (function() {
 			for (var j = 0; j<_height; j++) {
 				_cells[i][j].isOpen = false;
 				_cells[i][j].hasMine = false;
+				_cells[i][j].hasFlag = false;
 				_cells[i][j].neighbors = 0;
 			}
 		}
@@ -101,6 +102,19 @@ var BoardModel = (function() {
 			_cells[column][row].hasFlag = true;
 		}
 		this.flagSwitched.notify({column: column, row: row, hasFlag: _cells[column][row].hasFlag});
+	};
+
+	BoardModel.prototype.openAllMines = function () {
+		for (var i = 0; i<_width; i++) {
+			for (var j = 0; j<_height; j++) {
+				if (!_cells[i][j].hasMine || _cells[i][j].isOpen) continue; 
+
+				_cells[i][j].hasFlag = false;
+				_cells[i][j].isOpen = false;
+				this.cellOpened.notify({column: i, row: j, cell: _cells[i][j]});
+			}
+		}
+		this.openedCount = 0;
 	};
 
 	return BoardModel;

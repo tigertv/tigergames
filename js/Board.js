@@ -6,7 +6,7 @@ function Board (model, view) {
 	this.hasMine = new Event(this);
 	this.demined = new Event(this);
 
-	// model handlers
+	// handlers
 	this.model.cellOpened.attach(this.checkMine.bind(this));
 	this.view.clicked.attach(this.viewClickHandler.bind(this));
 	this.view.rightClicked.attach(this.viewRightClickHandler.bind(this));
