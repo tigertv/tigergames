@@ -7,16 +7,17 @@ h1 {
 }
 
 .bomb {
-	color: red;
+	color: black;
+	background-image: url(img/bomb.svg);
 }
 
 .flag {
-	color: green;
+	color: red;
 }
 
 #board {
 	border-collapse: separate;
-	border-spacing: 10px;
+	border-spacing: 0px;
 }
 
 #board tr {
@@ -24,10 +25,15 @@ h1 {
 }
 
 #board td {
-	background: #2874a6;
-	color: white;
+	background: #bdbdbd;
+	color: #007b00;
 	width: 30px;
 	height: 30px;
 	text-align: center;
+
+	border-left: solid 1px #7b7b7b;
+	border-top: solid 1px #7b7b7b;
+	border-bottom: none;
+	border-right: none;
 }
 
