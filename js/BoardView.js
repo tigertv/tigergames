@@ -29,7 +29,8 @@ BoardView.prototype.updateCell = function (sender, args) {
 	let y = args.row;
 	let cell = args.cell;
 	let elem = this.element.rows[y].cells[x];
-	
+	elem.className = "";
+
 	if (cell.hasMine) { 
 		elem.innerHTML = "<span class='bomb'>&#x1f4a3;</span>";
 	} else {
@@ -47,6 +48,7 @@ BoardView.prototype.render = function () {
 		let row = this.element.insertRow();
 		for (let j = 0; j<this.model.getColumns(); j++) {
 			let cell = row.insertCell();
+			cell.className = 'closed';
 
 			cell.onclick = function () {
 				_this.clicked.notify({column:j,row:i});				

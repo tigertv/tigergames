@@ -73,3 +73,9 @@ h1 {
 	border-right: none;
 }
 
+#board td.closed {
+	border-bottom: solid 2px #7b7b7b;
+	border-right: solid 2px #7b7b7b;
+	border-top: solid 2px #fff;
+	border-left: solid 2px #fff;
+}
