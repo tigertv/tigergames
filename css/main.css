@@ -15,6 +15,42 @@ h1 {
 	color: red;
 }
 
+.number0{
+	color: white; 
+}
+
+.number1{
+	color: blue;
+}
+
+.number2{
+	color: #007b00;
+}
+
+.number3{
+	color: red;
+}
+
+.number4{
+	color: #00007b;
+}
+
+.number5{
+	color: #7b0000;
+}
+
+.number6{
+	color: #006968;
+}
+
+.number7{
+	color: #007b7b;
+}
+
+.number8{
+	color: #7b7b7b;
+}
+
 #board {
 	border-collapse: separate;
 	border-spacing: 0px;

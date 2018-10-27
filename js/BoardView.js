@@ -33,7 +33,7 @@ BoardView.prototype.updateCell = function (sender, args) {
 	if (cell.hasMine) { 
 		elem.innerHTML = "<span class='bomb'>&#x1f4a3;</span>";
 	} else {
-		elem.innerHTML = cell.neighbors;
+		elem.innerHTML = "<span class='number"+cell.neighbors+"'>"+cell.neighbors+"</span>";
 	}
 };
 
