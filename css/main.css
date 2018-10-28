@@ -74,6 +74,8 @@ h1 {
 }
 
 #board td.closed {
+	width: 27px;
+	height: 27px;
 	border-bottom: solid 2px #7b7b7b;
 	border-right: solid 2px #7b7b7b;
 	border-top: solid 2px #fff;
