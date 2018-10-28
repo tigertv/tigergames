@@ -85,10 +85,22 @@ var BoardModel = (function() {
 		_cells[column][row].isOpen = true;
 		this.openedCount++;
 
+		let result;
+
 		if (_cells[column][row].hasMine) {
 			result = -1;
 		} else {
 			result = _cells[column][row].neighbors;
+			if (result == 0) {
+				// open empty spots
+				for (let i = column-1;i<column+2;i++) {
+					if (i<0 || i>=_cells.length) continue;
+					for (let j = row-1;j<row+2;j++) {
+						if (j<0 || j>=_cells[i].length || (i == column && j == row) ) continue;
+						this.open(i,j);
+					}
+				}
+			}
 		}
 
 		this.cellOpened.notify({column: column, row: row, cell: _cells[column][row]});
