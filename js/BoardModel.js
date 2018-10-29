@@ -108,11 +108,8 @@ var BoardModel = (function() {
 
 	BoardModel.prototype.switchFlag = function (column, row) {
 		if (_cells[column][row].isOpen) return; 
-		if (_cells[column][row].hasFlag) {
-			_cells[column][row].hasFlag = false;
-		} else {
-			_cells[column][row].hasFlag = true;
-		}
+
+		_cells[column][row].hasFlag = !_cells[column][row].hasFlag;
 		this.flagSwitched.notify({column: column, row: row, hasFlag: _cells[column][row].hasFlag});
 	};
 
