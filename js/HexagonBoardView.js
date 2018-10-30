@@ -14,7 +14,7 @@ function HexagonBoardView (model, elementId) {
 HexagonBoardView.prototype.flagHandler = function (sender, args) {
 	let x = args.column;
 	let y = args.row;
-	let elem = this.element.rows[y].cells[x];
+	let elem = document.getElementsByClassName('hex-in3')[this.model.getRows()*y+x];
 
 	if (args.hasFlag) { 
 		elem.innerHTML = "<span class='flag'>&#x2691;</span>";
