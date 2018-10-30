@@ -1,1 +1,6 @@
-# test
+# Games
+
+Minesweeper:
+
+- Classic
+- Hexagonal
