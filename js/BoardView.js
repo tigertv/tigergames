@@ -1,6 +1,9 @@
 function BoardView (model, elementId) {
 	this.model = model;
 	this.element = document.getElementById(elementId);
+	this.element.innerHTML = "";
+	this.table = document.createElement("table");
+	this.element.appendChild(this.table);
 
 	// events
 	this.clicked = new Event(this);
@@ -15,7 +18,7 @@ BoardView.prototype.flagHandler = function (sender, args) {
 
 	let x = args.column;
 	let y = args.row;
-	let elem = this.element.rows[y].cells[x];
+	let elem = this.table.rows[y].cells[x];
 
 	if (args.hasFlag) { 
 		elem.innerHTML = "<span class='flag'>&#x2691;</span>";
@@ -28,7 +31,7 @@ BoardView.prototype.updateCell = function (sender, args) {
 	let x = args.column;
 	let y = args.row;
 	let cell = args.cell;
-	let elem = this.element.rows[y].cells[x];
+	let elem = this.table.rows[y].cells[x];
 	elem.className = "";
 
 	if (cell.hasMine) { 
@@ -43,13 +46,12 @@ BoardView.prototype.updateCell = function (sender, args) {
 };
 
 BoardView.prototype.render = function () {
-	this.element.innerHTML = "";
-
+	this.table.innerHTML = "";
 	let _this = this;
 
 	// add click handlers to the cells in the table
 	for (let i = 0; i<this.model.getRows(); i++) {
-		let row = this.element.insertRow();
+		let row = this.table.insertRow();
 		for (let j = 0; j<this.model.getColumns(); j++) {
 			let cell = row.insertCell();
 			cell.className = 'closed';

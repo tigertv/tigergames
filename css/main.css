@@ -15,6 +15,62 @@ h1 {
 	color: red;
 }
 
+.hex-row{
+	white-space: nowrap;
+}
+
+.hex-row:nth-child(2n) { 
+    margin-left: 27px;
+    margin-top: -29px;
+    margin-bottom: -29px;
+}
+
+.hex-row:nth-child(2n) .hex-in3 { 
+
+}
+
+.hex-item{
+	display: inline-block;
+	top: 0px;
+	margin: 2px;
+	padding: 0px;
+	font-size: 20px;
+}
+
+.hex-item:nth-child(5n+7) .hex-in3 { 
+
+}
+
+.hex-in{
+	width: 50px;
+	height: 70px;
+	overflow: hidden;
+	visibility: hidden;
+	transform: rotate(60deg);	
+}
+
+.hex-in1{
+	transform: rotate(-120deg);	
+}
+
+.hex-in2{
+	
+}
+
+.hex-in3{
+	background: #bdbdbd;
+	visibility: visible;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 67px;
+}
+
+.hex-in3 span{
+	visibility: visible;	
+	text-align: center;
+	vertical-align: middle;
+}
+
 .number0{
 	color: white; 
 }
@@ -51,7 +107,7 @@ h1 {
 	color: #7b7b7b;
 }
 
-#board {
+#board table {
 	border-collapse: separate;
 	border-spacing: 0px;
 	font-weight: bold;

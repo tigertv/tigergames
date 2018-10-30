@@ -20,8 +20,8 @@ var Game = {
 	},
 
 	prepareBoard: function() {
-		var level = document.getElementById("level").value;
-		var size = 0;
+		let level = document.getElementById("level").value;
+		let size = 0;
 
 		switch (level) {
 			case 'beginner':
@@ -44,10 +44,26 @@ var Game = {
 				break;
 		}
 
-		let model = new BoardModel(size,size);
-		let view = new BoardView(model, "board");
-		this.board = new Board(model, view);
+		let type = document.getElementById("type").value;
 
+		let model, view;
+
+		switch (type) {
+			case 'classic':
+				model = new BoardModel(size,size);
+				view = new BoardView(model, "board");
+				break;
+
+			case 'hexagonal':
+				model = new HexagonBoardModel(size,size);
+				view = new HexagonBoardView(model, "board");
+				break;
+
+			default:
+				break;
+		}
+
+		this.board = new Board(model, view);
 		this.board.refresh(this.mines);
 	},
 
