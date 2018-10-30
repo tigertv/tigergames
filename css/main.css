@@ -71,6 +71,10 @@ h1 {
 	vertical-align: middle;
 }
 
+.hex-in3.closed{
+	background: #7b7b7b;
+}
+
 .number0{
 	color: white; 
 }
