@@ -54,6 +54,7 @@ h1 {
 #board {
 	border-collapse: separate;
 	border-spacing: 0px;
+	font-weight: bold;
 }
 
 #board tr {
