@@ -4,6 +4,7 @@ Minesweeper:
 
 - Classic
 - Hexagonal
+- Truncated Square 
 
 ![classic](img/pic01.png)
 

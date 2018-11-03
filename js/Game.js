@@ -59,6 +59,11 @@ var Game = {
 				view = new HexagonBoardView(model, "board");
 				break;
 
+			case 'truncated-square':
+				model = new TruncatedSquareBoardModel(size,size);
+				view = new TruncatedSquareBoardView(model, "board");
+				break;
+
 			default:
 				break;
 		}

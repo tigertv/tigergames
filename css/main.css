@@ -142,3 +142,57 @@ h1 {
 	border-top: solid 2px #fff;
 	border-left: solid 2px #fff;
 }
+
+.tr-sq-one {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  left: 10px;
+  top: 10px;
+  position: relative;
+  display: inline-block;
+  transform: rotate(-45deg);
+  line-height: 100px;
+}
+
+.tr-sq-two {
+  width: 100px;
+  height: 100px;
+  background: orange;
+  transform: rotate(45deg);
+  position: relative;
+  text-align: center;
+}
+
+.tr-sq-bl {
+	width: 40px;
+	height: 40px;
+	background: brown;
+	position: relative;
+	left: 10px;
+	bottom: 24px;
+	display: inline-block;
+	margin-left: 3px;
+	margin-right: 3px;
+	line-height: 40px;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+.tr-sq-row{
+  white-space: nowrap;
+}
+
+.tr-sq-item.closed {
+	background: grey;
+}
+
+.tr-sq-item {
+	background: #bdbdbd;
+}
+
+.tr-sq-row:nth-child(2n) { 
+    margin-left: 27px;
+    margin-top: -31px;
+    margin-bottom: -31px;
+}
